@@ -1,8 +1,9 @@
+docs_dir: mkdoc
+site_dir: docs
 site_name: Min doc
 theme:
   name: material
   language: zh
-
 nav:
   - 首页: index.md
   - Markdown语法: Markdown语法.md
