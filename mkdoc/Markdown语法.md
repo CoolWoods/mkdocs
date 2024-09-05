@@ -1,6 +1,5 @@
 # Markdown语法
 ## 样式标题
-[内嵌HTML标签](#y9nIc)
 
 ```markdown
 语法 # 文本内容，需要几级标题就有几个#
