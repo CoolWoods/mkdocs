@@ -1,0 +1,7 @@
+site_name: Min doc
+theme:
+  name: material
+nav:
+  - home: index.md
+  - markdown: Markdown语法.md
+  - about: about.md
