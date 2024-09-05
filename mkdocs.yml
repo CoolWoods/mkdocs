@@ -1,7 +1,8 @@
 site_name: Min doc
 theme:
   name: material
+  language: zh
+
 nav:
-  - home: index.md
-  - markdown: Markdown语法.md
-  - about: about.md
+  - 首页: index.md
+  - Markdown语法: Markdown语法.md
