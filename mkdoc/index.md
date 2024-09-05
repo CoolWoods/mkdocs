@@ -1,20 +1,5 @@
-# Welcome to MkDocs
+# Welcome to CoolWoods doc
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full documentation visit [CoolWoods doc](https://coolwoods.github.io/mkdocs/).
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-- [ ] 任务A
-- [x] 任务B
-- [x] 任务C
+![头像](image/头像.png)

@@ -1,6 +1,6 @@
 docs_dir: mkdoc
 site_dir: docs
-site_name: Min doc
+site_name: CoolWoods doc
 theme:
   name: material
   language: zh
