@@ -7,4 +7,4 @@ theme:
 nav:
   - 首页: index.md
   - Markdown语法: Markdown语法.md
-  - Mkdocs使用: README.md
+  - Mkdocs使用: Mkdocs使用.md
