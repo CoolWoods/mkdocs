@@ -1,10 +1,13 @@
 docs_dir: mkdoc
 site_dir: docs
-site_name: CoolWoods doc
+site_name: CoolWoods
 theme:
-  name: material
+  name: readthedocs
   language: zh
 nav:
   - 首页: index.md
   - Markdown语法: Markdown语法.md
   - Mkdocs使用: Mkdocs使用.md
+  - 关于:
+      更新日志: Release.md
+      License: License.md
