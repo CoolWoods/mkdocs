@@ -1,5 +1,8 @@
 # 日志
 
+# v0.2.3
+修改favicon.ico
+
 # v0.2
 1. 新增github仓库地址和编辑地址
 2. 主题改为mkdocs
