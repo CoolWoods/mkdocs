@@ -1,7 +1,6 @@
 docs_dir: mkdoc
 site_dir: docs
 site_name: CoolWoods
-repo_name: mkdocs
 repo_url: https://github.com/CoolWoods/mkdocs
 edit_uri: blob/main/mkdoc/
 theme:
