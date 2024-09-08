@@ -13,7 +13,7 @@ nav:
   - blog:
       - Markdown语法: 'Markdown语法'
       - Mkdocs使用: 'Mkdocs使用'
-      - Python安装: 'Python安装'
+      - python安装: 'python安装'
 
   - 关于:
       更新日志: Release.md
