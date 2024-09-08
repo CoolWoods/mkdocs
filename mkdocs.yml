@@ -1,13 +1,20 @@
 docs_dir: mkdoc
 site_dir: docs
 site_name: CoolWoods
+repo_name: mkdocs
+repo_url: https://github.com/CoolWoods/mkdocs
+edit_uri: blob/main/mkdoc/
 theme:
-  name: readthedocs
+  name: mkdocs
   language: zh
+  highlightjs: true
 nav:
   - 首页: index.md
-  - Markdown语法: Markdown语法.md
-  - Mkdocs使用: Mkdocs使用.md
+  - blog:
+      - Markdown语法: 'Markdown语法'
+      - Mkdocs使用: 'Mkdocs使用'
+      - Python安装: 'Python安装'
+
   - 关于:
       更新日志: Release.md
       License: License.md
