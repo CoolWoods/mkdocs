@@ -17,3 +17,5 @@ nav:
   - 关于:
       更新日志: Release.md
       License: License.md
+not_in_nav: |
+  /private.md

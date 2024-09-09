@@ -1,6 +1,6 @@
-# Welcome to CoolWoods doc
+# CoolWoods
 
-![avatar](https://cdn.jsdelivr.net/gh/CoolWoods/images@main/202409051615971.png)
+![avatar](http://mypost-images.test.upcdn.net/images202409091411862.png)
 
 documentation visit [CoolWoods doc](https://coolwoods.github.io/mkdocs/).
 
