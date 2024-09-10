@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>多线程 - CoolWoods</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">CoolWoods</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">blog</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Markdown%E8%AF%AD%E6%B3%95/" class="dropdown-item">Markdown语法</a>
+</li>
+                                    
+<li>
+    <a href="../../Mkdocs%E4%BD%BF%E7%94%A8/" class="dropdown-item">Mkdocs使用</a>
+</li>
+                                    
+<li>
+    <a href="../../python%E5%AE%89%E8%A3%85/" class="dropdown-item">python安装</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">java</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">多线程</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">关于</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Release/" class="dropdown-item">更新日志</a>
+</li>
+                                    
+<li>
+    <a href="../../License/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../python%E5%AE%89%E8%A3%85/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Release/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/CoolWoods/mkdocs/blob/main/mkdoc/java/多线程.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#java" class="nav-link">Java多线程</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">线程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">线程池</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#future" class="nav-link">Future的使用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="java">Java多线程</h1>
+<h2 id="_1">线程</h2>
+<ol>
+<li>线程是进程内的执行单元，不分配单独的资源，执行一个单独的子任务。</li>
+<li>线程是进程内调度和分派的基本单位，共享进程资源。每个线程有自己的独立的栈存储空间，保存线程执行的方法以及基本类型的数据。</li>
+<li>运行的 Java 程序内含至少一个主线程 main ，用户可以在 Java 程序中自定义并调用多个线程。</li>
+</ol>
+<h3 id="_2">线程的运行状态</h3>
+<ul>
+<li>创建</li>
+<li>运行 (Running) CPU 正在执行线程。</li>
+<li>就绪 (Runnable) 线程一切就绪，等待JVM调度。</li>
+<li>阻塞 (Blocked) 线程因缺少其他资源，比如请求资源被上锁而暂停执行。在获得资源后进入就绪状态。</li>
+<li>等待 (Waitting) 线程接受了等待指令，释放资源暂停执行。在超时/接受唤醒指令后进入就绪状态。</li>
+<li>结束</li>
+</ul>
+<h3 id="runnable">Runnable接口</h3>
+<p>Java中处理多线程使用的是Runnable接口</p>
+<h3 id="thread">Thread类</h3>
+<p>Thread类是Java自带的线程类，实现了Runnable接口。Thread主要有以下几种常用的创建方式</p>
+<pre><code class="language-java">public class ThreadDemo1 {
+    public static void main(String[] args) {
+        //通过使用Runnable对象创建创建线程
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        },&quot;命名&quot;);
+        // 通过lambada创建匿名内部类的方法创建线程，本质上与thread1相同，但是使用更方便
+        Thread thread3 = new Thread(()-&gt;{});
+    }
+}
+</code></pre>
+<p>除此之外，还可以通过继承Thread的方式重写run方法，来给Thread添加具体的操作</p>
+<pre><code class="language-java">public class MyThread extends Thread {
+   @Override
+   public void run() {
+       System.out.println(Thread.currentThread().getName());
+   }
+}
+</code></pre>
+<h4 id="_3">启动线程</h4>
+<ul>
+<li>
+<p>Thread类定义了start方法。</p>
+</li>
+<li>
+<p>调用start方法后，系统会开启一个新线程进入就绪状态：JVM会自动对线程进行调度，在运行时调用并执行线程的run方法。</p>
+</li>
+<li>
+<p>一个线程只能启动一次。</p>
+</li>
+</ul>
+<h4 id="_4">线程状态控制</h4>
+<ul>
+<li>创建-&gt;就绪start();</li>
+<li>运行-&gt;就绪yield();</li>
+<li>运行-&gt;暂停sleep(1000);</li>
+<li>运行-&gt;等待wait()</li>
+<li>等待-&gt;就绪notify()</li>
+<li>运行-&gt;结束 强制结束：stop()；发送终止标志：interrupt()</li>
+</ul>
+<h2 id="_5">线程池</h2>
+<p>线程池本质上是一种对象池，用于管理线程资源。在任务执行前，需要从线程池中拿出线程来执行。在任务执行完成之后，把线程放回线程池。</p>
+<p>实际开发中，线程资源一般通过线程池提供，比如处理数据库连接、接收网络请求。 线程池可以使线程的创建更加规范，合理控制开辟线程的数量。
+不必频繁地创建和销毁线程，优化了资源的开销。</p>
+<h3 id="_6">线程池参数</h3>
+<ul>
+<li>核心线程池 (corePool) </li>
+<li>最大线程池 (maximumPool)</li>
+<li>任务队列 (BlockQueue) </li>
+<li>拒绝策略 (RejectedExecutionHandler) </li>
+</ul>
+<h4 id="_7">核心线程池</h4>
+<p>(corePool) 通常状况下，线程池最多能创建的线程数。</p>
+<p>当有新任务等待处理时，线程池会首先判断核心线程池是否已满，如果没满则创建线程执行任务。即使有其他核心线程空闲也会创建新的核心线程来执行。</p>
+<h4 id="_8">最大线程池</h4>
+<p>(maximumPool) 任务量很大时，线程池最多能创建的线程数。</p>
+<p>如果队列已满，说明当前任务量已经非常大，仅靠核心线程池内的线程数量已无法处理。线程池会判断最大线程池是否已满，如果没满则创建更多线程，从等待队列首部取得任务并执行。</p>
+<h4 id="_9">任务队列</h4>
+<p>(BlockQueue) 线程池中等待被线程执行的任务队列。</p>
+<p>如果核心线程池已满，线程池会判断队列是否已满。如果队列没满，就会将任务放在队列中等待执行。</p>
+<p>ArrayBlockingQueue // 基于数组实现的阻塞队列，有界。
+LinkedBlockingQueue // 基于链表实现的阻塞队列，可以无界。
+SynchronousQueue // 不存储元素的阻塞队列，每个插入操作必须等到另一个线程调用移除操作。
+PriorityBlockingQueue // 带优先级的阻塞队列，无界。</p>
+<h4 id="_10">拒绝策略</h4>
+<p>(RejectedExecutionHandler) 线程池拒绝过量任务的方式。</p>
+<p>如果最大线程池已满，表示当前服务器已无法处理这么多任务。任务会按照既定的拒绝策略被处理。</p>
+<p>CallerRunsPolicy // 在调用者线程执行。
+AbortPolicy // 直接抛出 RejectedExecutionException 异常。
+DiscardPolicy // （常用）任务直接丢弃，不做任何处理。
+DiscardOldestPolicy // 丢弃队列里最旧的那个任务，再尝试执行当前任务。</p>
+<h2 id="future">Future的使用</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

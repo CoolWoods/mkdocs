@@ -10,12 +10,14 @@ theme:
 nav:
   - 首页: index.md
   - blog:
-      - Markdown语法: 'Markdown语法'
-      - Mkdocs使用: 'Mkdocs使用'
-      - python安装: 'python安装'
+      - Markdown语法: 'Markdown语法.md'
+      - Mkdocs使用: 'Mkdocs使用.md'
+      - python安装: 'python安装.md'
+  - java:
+      - 多线程: 'java/多线程.md'
 
   - 关于:
-      更新日志: Release.md
-      License: License.md
+      更新日志: 'Release.md'
+      License: 'License.md'
 not_in_nav: |
-  /private.md
+  /Tms.md
