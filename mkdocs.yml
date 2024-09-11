@@ -21,6 +21,8 @@ theme:
     # - toc.integrate
     - navigation.top
     - navigation.footer
+    - content.code.copy
+    - content.code.select
   language: zh
   highlightjs: true
 plugins:
@@ -42,3 +44,14 @@ nav:
       - License: License.md
 not_in_nav: |
   /Tms.md
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      linenums_style: pymdownx-inline
+      auto_title: true
+      pygments_lang_class: true
+      use_pygments: true
+#      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
