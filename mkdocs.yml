@@ -3,6 +3,7 @@ site_dir: docs
 site_name: CoolWoods
 repo_url: https://github.com/CoolWoods/mkdocs
 edit_uri: blob/main/mkdoc/
+repo_name: CoolWoods/mkdocs
 theme:
   logo: assets/logo.png
   name: material
