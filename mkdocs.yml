@@ -38,6 +38,7 @@ nav:
       - python安装: python安装.md
   - java:
       - 多线程: java/多线程.md
+      - 流: java/流.md
 
   - 关于:
       - 更新日志: Release.md
