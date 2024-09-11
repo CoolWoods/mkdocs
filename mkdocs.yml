@@ -4,20 +4,40 @@ site_name: CoolWoods
 repo_url: https://github.com/CoolWoods/mkdocs
 edit_uri: blob/main/mkdoc/
 theme:
-  name: mkdocs
+  logo: assets/logo.png
+  name: material
+  features:
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.instant.preview
+    # - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.path
+    # - navigation.indexes
+    # - toc.follow
+    # - toc.integrate
+    - navigation.top
+    - navigation.footer
   language: zh
   highlightjs: true
+plugins:
+  - search
+  - blog
 nav:
+  # - Section:
+  #     - section/index.md
   - 首页: index.md
-  - blog:
-      - Markdown语法: 'Markdown语法.md'
-      - Mkdocs使用: 'Mkdocs使用.md'
-      - python安装: 'python安装.md'
+  - 博客:
+      - Markdown语法: Markdown语法.md
+      - Mkdocs使用: Mkdocs使用.md
+      - python安装: python安装.md
   - java:
-      - 多线程: 'java/多线程.md'
+      - 多线程: java/多线程.md
 
   - 关于:
-      更新日志: 'Release.md'
-      License: 'License.md'
+      - 更新日志: Release.md
+      - License: License.md
 not_in_nav: |
   /Tms.md
