@@ -236,6 +236,10 @@ PS C:\Users\Administrator> java -X
 - `-XX:<option>=<number><size>` 给选项设置一个数字类型值和单位，例如 1024k、512m、1g。
 - `-XX:<option>=<string>` 给选项设置一个字符串值，例如`-XX:HeapDumpPath=./dump.core`。
 
+查看JVM支持的所有参数`java -XX:+PrintFlagsFinal`。
+
+查看JVM启动参数`java -XX:+PrintCommandLineFlags`。
+
 #### 性能参数
 
 - -XX:LargePageSizeInBytes=4m 设置用于 Java 堆的大页面尺寸。

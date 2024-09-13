@@ -1295,6 +1295,8 @@ Survivor 空间、To Survivor 空间等。成员变量和通过 new 关键字创
 <li><code>-XX:&lt;option&gt;=&lt;number&gt;&lt;size&gt;</code> 给选项设置一个数字类型值和单位，例如 1024k、512m、1g。</li>
 <li><code>-XX:&lt;option&gt;=&lt;string&gt;</code> 给选项设置一个字符串值，例如<code>-XX:HeapDumpPath=./dump.core</code>。</li>
 </ul>
+<p>查看JVM支持的所有参数<code>java -XX:+PrintFlagsFinal</code>。</p>
+<p>查看JVM启动参数<code>java -XX:+PrintCommandLineFlags</code>。</p>
 <h4 id="_7">性能参数</h4>
 <ul>
 <li>-XX:LargePageSizeInBytes=4m 设置用于 Java 堆的大页面尺寸。</li>
