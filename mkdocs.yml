@@ -6,6 +6,7 @@ edit_uri: blob/main/mkdoc/
 repo_name: CoolWoods/mkdocs
 theme:
   logo: assets/logo.png
+  favicon: assets/logo.png
   name: material
   features:
     # - navigation.instant
