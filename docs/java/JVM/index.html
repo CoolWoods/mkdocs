@@ -675,6 +675,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jvm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      JVM 参数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JVM 参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准参数（-）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      非标准参数（-X）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      非 Stable 参数（-XX，非表态参数）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非 Stable 参数（-XX，非表态参数）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -924,6 +999,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jvm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      JVM 参数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JVM 参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准参数（-）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      非标准参数（-X）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stable-xx" class="md-nav__link">
+    <span class="md-ellipsis">
+      非 Stable 参数（-XX，非表态参数）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非 Stable 参数（-XX，非表态参数）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      行为参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      调试参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1029,6 +1179,172 @@ Survivor 空间、To Survivor 空间等。成员变量和通过 new 关键字创
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="jvm_4">JVM 参数</h2>
+<p>在 Java 虚拟机的参数中，有 3 种表示方法</p>
+<ul>
+<li>标准参数（-），所有的 JVM 实现都必须实现这些参数的功能，而且向后兼容；</li>
+<li>非标准参数（-X），默认 jvm 实现这些参数的功能，但是并不保证所有 jvm 实现都满足，且不保证向后兼容；</li>
+<li>非 Stable 参数（-XX），此类参数各个 jvm 实现会有所不同，将来可能会随时取消，需要慎重使用（但是，这些参数往往是非常有用的）；</li>
+</ul>
+<h3 id="-">标准参数（-）</h3>
+<p>使用<code>java -help</code>命令可以查看所有标准参数。</p>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator&gt;<span class="w"> </span>java<span class="w"> </span>-help
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>用法:<span class="w"> </span>java<span class="w"> </span><span class="o">[</span>-options<span class="o">]</span><span class="w"> </span>class<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">           </span><span class="o">(</span>执行类<span class="o">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">   </span>或<span class="w">  </span>java<span class="w"> </span><span class="o">[</span>-options<span class="o">]</span><span class="w"> </span>-jar<span class="w"> </span>jarfile<span class="w"> </span><span class="o">[</span>args...<span class="o">]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">           </span><span class="o">(</span>执行<span class="w"> </span>jar<span class="w"> </span>文件<span class="o">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>其中选项包括:
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span>-d32<span class="w">          </span>使用<span class="w"> </span><span class="m">32</span><span class="w"> </span>位数据模型<span class="w"> </span><span class="o">(</span>如果可用<span class="o">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span>-d64<span class="w">          </span>使用<span class="w"> </span><span class="m">64</span><span class="w"> </span>位数据模型<span class="w"> </span><span class="o">(</span>如果可用<span class="o">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span>-server<span class="w">       </span>选择<span class="w"> </span><span class="s2">&quot;server&quot;</span><span class="w"> </span>VM
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">                  </span>默认<span class="w"> </span>VM<span class="w"> </span>是<span class="w"> </span>server.
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span>-cp<span class="w"> </span>&lt;目录和<span class="w"> </span>zip/jar<span class="w"> </span>文件的类搜索路径&gt;
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span>-classpath<span class="w"> </span>&lt;目录和<span class="w"> </span>zip/jar<span class="w"> </span>文件的类搜索路径&gt;
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">                  </span>用<span class="w"> </span><span class="p">;</span><span class="w"> </span>分隔的目录,<span class="w"> </span>JAR<span class="w"> </span>档案
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">                  </span>和<span class="w"> </span>ZIP<span class="w"> </span>档案列表,<span class="w"> </span>用于搜索类文件。
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span>-D&lt;名称&gt;<span class="o">=</span>&lt;值&gt;
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">                  </span>设置系统属性
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span>-verbose:<span class="o">[</span>class<span class="p">|</span>gc<span class="p">|</span>jni<span class="o">]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">                  </span>启用详细输出
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><a href="#__codelineno-1-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span>-version<span class="w">      </span>输出产品版本并退出
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><a href="#__codelineno-1-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">    </span>-version:&lt;值&gt;
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><a href="#__codelineno-1-22"><span class="linenos" data-linenos="22 "></span></a><span class="w">                  </span>警告:<span class="w"> </span>此功能已过时,<span class="w"> </span>将在
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><a href="#__codelineno-1-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">                  </span>未来发行版中删除。
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><a href="#__codelineno-1-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">                  </span>需要指定的版本才能运行
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><a href="#__codelineno-1-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">    </span>-showversion<span class="w">  </span>输出产品版本并继续
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><a href="#__codelineno-1-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">    </span>-jre-restrict-search<span class="w"> </span><span class="p">|</span><span class="w"> </span>-no-jre-restrict-search
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><a href="#__codelineno-1-27"><span class="linenos" data-linenos="27 "></span></a><span class="w">                  </span>警告:<span class="w"> </span>此功能已过时,<span class="w"> </span>将在
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><a href="#__codelineno-1-28"><span class="linenos" data-linenos="28 "></span></a><span class="w">                  </span>未来发行版中删除。
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><a href="#__codelineno-1-29"><span class="linenos" data-linenos="29 "></span></a><span class="w">                  </span>在版本搜索中包括/排除用户专用<span class="w"> </span>JRE
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><a href="#__codelineno-1-30"><span class="linenos" data-linenos="30 "></span></a><span class="w">    </span>-?<span class="w"> </span>-help<span class="w">      </span>输出此帮助消息
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><a href="#__codelineno-1-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">    </span>-X<span class="w">            </span>输出非标准选项的帮助
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><a href="#__codelineno-1-32"><span class="linenos" data-linenos="32 "></span></a><span class="w">    </span>-ea<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><a href="#__codelineno-1-33"><span class="linenos" data-linenos="33 "></span></a><span class="w">    </span>-enableassertions<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><a href="#__codelineno-1-34"><span class="linenos" data-linenos="34 "></span></a><span class="w">                  </span>按指定的粒度启用断言
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><a href="#__codelineno-1-35"><span class="linenos" data-linenos="35 "></span></a><span class="w">    </span>-da<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><a href="#__codelineno-1-36"><span class="linenos" data-linenos="36 "></span></a><span class="w">    </span>-disableassertions<span class="o">[</span>:&lt;packagename&gt;...<span class="p">|</span>:&lt;classname&gt;<span class="o">]</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><a href="#__codelineno-1-37"><span class="linenos" data-linenos="37 "></span></a><span class="w">                  </span>禁用具有指定粒度的断言
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><a href="#__codelineno-1-38"><span class="linenos" data-linenos="38 "></span></a><span class="w">    </span>-esa<span class="w"> </span><span class="p">|</span><span class="w"> </span>-enablesystemassertions
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><a href="#__codelineno-1-39"><span class="linenos" data-linenos="39 "></span></a><span class="w">                  </span>启用系统断言
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><a href="#__codelineno-1-40"><span class="linenos" data-linenos="40 "></span></a><span class="w">    </span>-dsa<span class="w"> </span><span class="p">|</span><span class="w"> </span>-disablesystemassertions
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><a href="#__codelineno-1-41"><span class="linenos" data-linenos="41 "></span></a><span class="w">                  </span>禁用系统断言
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><a href="#__codelineno-1-42"><span class="linenos" data-linenos="42 "></span></a><span class="w">    </span>-agentlib:&lt;libname&gt;<span class="o">[=</span>&lt;选项&gt;<span class="o">]</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><a href="#__codelineno-1-43"><span class="linenos" data-linenos="43 "></span></a><span class="w">                  </span>加载本机代理库<span class="w"> </span>&lt;libname&gt;,<span class="w"> </span>例如<span class="w"> </span>-agentlib:hprof
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a><a href="#__codelineno-1-44"><span class="linenos" data-linenos="44 "></span></a><span class="w">                  </span>另请参阅<span class="w"> </span>-agentlib:jdwp<span class="o">=</span><span class="nb">help</span><span class="w"> </span>和<span class="w"> </span>-agentlib:hprof<span class="o">=</span><span class="nb">help</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a><a href="#__codelineno-1-45"><span class="linenos" data-linenos="45 "></span></a><span class="w">    </span>-agentpath:&lt;pathname&gt;<span class="o">[=</span>&lt;选项&gt;<span class="o">]</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a><a href="#__codelineno-1-46"><span class="linenos" data-linenos="46 "></span></a><span class="w">                  </span>按完整路径名加载本机代理库
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a><a href="#__codelineno-1-47"><span class="linenos" data-linenos="47 "></span></a><span class="w">    </span>-javaagent:&lt;jarpath&gt;<span class="o">[=</span>&lt;选项&gt;<span class="o">]</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a><a href="#__codelineno-1-48"><span class="linenos" data-linenos="48 "></span></a><span class="w">                  </span>加载<span class="w"> </span>Java<span class="w"> </span>编程语言代理,<span class="w"> </span>请参阅<span class="w"> </span>java.lang.instrument
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a><a href="#__codelineno-1-49"><span class="linenos" data-linenos="49 "></span></a><span class="w">    </span>-splash:&lt;imagepath&gt;
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a><a href="#__codelineno-1-50"><span class="linenos" data-linenos="50 "></span></a><span class="w">                  </span>使用指定的图像显示启动屏幕
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a><a href="#__codelineno-1-51"><span class="linenos" data-linenos="51 "></span></a>有关详细信息,<span class="w"> </span>请参阅<span class="w"> </span>http://www.oracle.com/technetwork/java/javase/documentation/index.html。
+</code></pre></div>
+<h3 id="-x">非标准参数（-X）</h3>
+<p>非标准参数，是在标准参数的基础上进行扩展的参数，输入<code>java -X</code>命令，能够获得当前 JVM 支持的所有非标准参数列表。</p>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator&gt;<span class="w"> </span>java<span class="w"> </span>-X
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span>-Xmixed<span class="w">           </span>混合模式执行（默认）
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span>-Xint<span class="w">             </span>仅解释模式执行
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span>-Xbootclasspath:&lt;用<span class="w"> </span><span class="p">;</span><span class="w"> </span>分隔的目录和<span class="w"> </span>zip/jar<span class="w"> </span>文件&gt;
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">                      </span>设置引导类和资源的搜索路径
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span>-Xbootclasspath/a:&lt;用<span class="w"> </span><span class="p">;</span><span class="w"> </span>分隔的目录和<span class="w"> </span>zip/jar<span class="w"> </span>文件&gt;
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">                      </span>附加在引导类路径末尾
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span>-Xbootclasspath/p:&lt;用<span class="w"> </span><span class="p">;</span><span class="w"> </span>分隔的目录和<span class="w"> </span>zip/jar<span class="w"> </span>文件&gt;
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">                      </span>置于引导类路径之前
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span>-Xdiag<span class="w">            </span>显示附加诊断消息
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span>-Xnoclassgc<span class="w">        </span>禁用类垃圾收集
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span>-Xincgc<span class="w">           </span>启用增量垃圾收集
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span>-Xloggc:&lt;file&gt;<span class="w">    </span>将<span class="w"> </span>GC<span class="w"> </span>状态记录在文件中（带时间戳）
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">    </span>-Xbatch<span class="w">           </span>禁用后台编译
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">    </span>-Xms&lt;size&gt;<span class="w">        </span>设置初始<span class="w"> </span>Java<span class="w"> </span>堆大小
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span>-Xmx&lt;size&gt;<span class="w">        </span>设置最大<span class="w"> </span>Java<span class="w"> </span>堆大小
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">    </span>-Xss&lt;size&gt;<span class="w">        </span>设置<span class="w"> </span>Java<span class="w"> </span>线程堆栈大小
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span>-Xprof<span class="w">            </span>输出<span class="w"> </span>cpu<span class="w"> </span>分析数据
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">    </span>-Xfuture<span class="w">          </span>启用最严格的检查，预计会成为将来的默认值
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span>-Xrs<span class="w">              </span>减少<span class="w"> </span>Java/VM<span class="w"> </span>对操作系统信号的使用（请参阅文档）
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">    </span>-Xcheck:jni<span class="w">       </span>对<span class="w"> </span>JNI<span class="w"> </span>函数执行其他检查
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><a href="#__codelineno-2-22"><span class="linenos" data-linenos="22 "></span></a><span class="w">    </span>-Xshare:off<span class="w">       </span>不尝试使用共享类数据
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><a href="#__codelineno-2-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">    </span>-Xshare:auto<span class="w">      </span>在可能的情况下使用共享类数据（默认）
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><a href="#__codelineno-2-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">    </span>-Xshare:on<span class="w">        </span>要求使用共享类数据，否则将失败。
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><a href="#__codelineno-2-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">    </span>-XshowSettings<span class="w">    </span>显示所有设置并继续
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><a href="#__codelineno-2-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">    </span>-XshowSettings:system
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><a href="#__codelineno-2-27"><span class="linenos" data-linenos="27 "></span></a><span class="w">                      </span>（仅限<span class="w"> </span>Linux）显示系统或容器
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><a href="#__codelineno-2-28"><span class="linenos" data-linenos="28 "></span></a><span class="w">                      </span>配置并继续
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><a href="#__codelineno-2-29"><span class="linenos" data-linenos="29 "></span></a><span class="w">    </span>-XshowSettings:all
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><a href="#__codelineno-2-30"><span class="linenos" data-linenos="30 "></span></a><span class="w">                      </span>显示所有设置并继续
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><a href="#__codelineno-2-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">    </span>-XshowSettings:vm<span class="w"> </span>显示所有与<span class="w"> </span>vm<span class="w"> </span>相关的设置并继续
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><a href="#__codelineno-2-32"><span class="linenos" data-linenos="32 "></span></a><span class="w">    </span>-XshowSettings:properties
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><a href="#__codelineno-2-33"><span class="linenos" data-linenos="33 "></span></a><span class="w">                      </span>显示所有属性设置并继续
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a><a href="#__codelineno-2-34"><span class="linenos" data-linenos="34 "></span></a><span class="w">    </span>-XshowSettings:locale
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a><a href="#__codelineno-2-35"><span class="linenos" data-linenos="35 "></span></a><span class="w">                      </span>显示所有与区域设置相关的设置并继续
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a><a href="#__codelineno-2-36"><span class="linenos" data-linenos="36 "></span></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a><a href="#__codelineno-2-37"><span class="linenos" data-linenos="37 "></span></a>-X<span class="w"> </span>选项是非标准选项。如有更改，恕不另行通知。
+</code></pre></div>
+<ul>
+<li>-Xmn 新生代大小，使用方法：<code>-Xmn65535</code>、<code>-Xmn1024k</code>、<code>-Xmn512m</code>以及<code>-Xmn1g</code>（<code>-Xms -Xmx -Xss</code>也是这种写法）。</li>
+</ul>
+<h3 id="stable-xx">非 Stable 参数（-XX，非表态参数）</h3>
+<p>非静态参数，可以分为三类。</p>
+<ul>
+<li>性能参数：用于 JVM 性能调优和内存分配控制，如初始化内存大小设置。</li>
+<li>行为参数：用于改变 JVM 的基础行为，如 GC 的方式和算法的选择。</li>
+<li>调试参数：用于监控、打印、输出等 JVM 参数，用于显示 JVM 更加详细的信息
+  非静态参数，使用方法有四种：</li>
+<li><code>-XX:+&lt;option&gt;</code> 启用选项。</li>
+<li><code>-XX:-&lt;option&gt;</code> 启用选项。</li>
+<li><code>-XX:&lt;option&gt;=&lt;number&gt;&lt;size&gt;</code> 给选项设置一个数字类型值和单位，例如 1024k、512m、1g。</li>
+<li><code>-XX:&lt;option&gt;=&lt;string&gt;</code> 给选项设置一个字符串值，例如<code>-XX:HeapDumpPath=./dump.core</code>。</li>
+</ul>
+<h4 id="_7">性能参数</h4>
+<ul>
+<li>-XX:LargePageSizeInBytes=4m 设置用于 Java 堆的大页面尺寸。</li>
+<li>-XX:MaxHeapFreeRatio=70 GC 后 java 堆中空闲量占的最大比例。</li>
+<li>-XX:PermSize=64m 初始老年代内存区域大小。</li>
+<li>-XX:NewSize=24m 初始新生代大小。</li>
+<li>-XX:MaxNewSize=24m 新生成对象能占用内存的最大值。</li>
+<li>-XX:MaxPermSize=64m 老年代对象能占用内存的最大值。</li>
+<li>-XX:MinHeapFreeRatio=40 GC 后 java 堆中空闲量占的最小比例。</li>
+<li>-XX:NewRatio=2 新生代内存容量与老生代内存容量的比例。</li>
+<li>-XX:NewSize=2.125m 新生代对象生成时占用内存的默认值。</li>
+<li>-XX:ReservedCodeCacheSize=32m 保留代码占用的内存容量。</li>
+<li>-XX:ThreadStackSize=512 设置线程栈大小，若为 0 则使用系统默认值。</li>
+<li>-XX:+UseLargePages 使用大页面内存。</li>
+</ul>
+<p>按照官方推荐新生代老年代:持久代=3:4:1</p>
+<h4 id="_8">行为参数</h4>
+<ul>
+<li>-XX:-DisableExplicitGC 禁止调用 System.gc() ；但 jvm 的 gc 仍然有效。</li>
+<li>-XX:+MaxFDLimit 最大化文件描述符的数量限制。</li>
+<li>-XX:+ScavengeBeforeFullGC 新生代 GC 优先于 Full GC（全体回收模式） 执行。</li>
+<li>-XX:+UseGCOverheadLimit 在抛出 OOM 之前限制 jvm 耗费在 GC 上的时间比例。</li>
+<li>-XX:-UseConcMarkSweepGC 对老生代采用并发标记交换算法进行 GC。</li>
+<li>-XX:-UseParallelGC 启用并行 GC。</li>
+<li>-XX:-UseParallelOldGC 对 Full GC 启用并行，当-XX:-UseParallelGC 启用时该项自动启用。</li>
+<li>-XX:-UseSerialGC 启用串行 GC。</li>
+<li>-XX:+UseThreadPriorities 启用本地线程优先级。</li>
+</ul>
+<h4 id="_9">调试参数</h4>
+<ul>
+<li>-XX:-CITime 打印消耗在 JIT 编译的时间。</li>
+<li>-XX:ErrorFile=./hs_err_pid<pid>.log 保存错误日志或者数据到文件中。</li>
+<li>-XX:-ExtendedDTraceProbes 开启 solaris 特有的 dtrace 探针。</li>
+<li>-XX:HeapDumpPath=./java_pid<pid>.hprof 指定导出堆信息时的路径或文件名。</li>
+<li>-XX:-HeapDumpOnOutOfMemoryError 当首次遭遇 OOM 时导出此时堆中相关信息。</li>
+<li>-XX:OnError="<cmd args>;<cmd args>" 出现致命 ERROR 之后运行自定义命令。</li>
+<li>-XX:OnOutOfMemoryError="<cmd args>;<cmd args>" 当首次遭遇 OOM 时执行自定义命令。</li>
+<li>-XX:-PrintClassHistogram 遇到 Ctrl-Break 后打印类实例的柱状信息，与 jmap -histo 功能相同。</li>
+<li>-XX:-PrintConcurrentLocks 遇到 Ctrl-Break 后打印并发锁的相关信息，与 jstack -l 功能相同。</li>
+<li>-XX:-PrintCommandLineFlags 打印在命令行中出现过的标记。</li>
+<li>-XX:-PrintCompilation 当一个方法被编译时打印相关信息。</li>
+<li>-XX:-PrintGC 每次 GC 时打印相关信息。</li>
+<li>-XX:-PrintGC Details 每次 GC 时打印详细信息。</li>
+<li>-XX:-PrintGCTimeStamps 打印每次 GC 的时间戳。</li>
+<li>-XX:-TraceClassLoading 跟踪类的加载信息。</li>
+<li>-XX:-TraceClassLoadingPreorder 跟踪被引用到的所有类的加载信息。</li>
+<li>-XX:-TraceClassResolution 跟踪常量池。</li>
+<li>-XX:-TraceClassUnloading 跟踪类的卸载信息。</li>
+<li>-XX:-TraceLoaderConstraints 跟踪类加载器约束的相关信息。</li>
+</ul>
 
 
 
