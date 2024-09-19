@@ -42,7 +42,8 @@ nav:
       - 流: java/流.md
       - JVM: java/JVM.md
       - Servlet: java/Servlet.md
-
+  - spring:
+      - validator: spring/Validator.md
   - 关于:
       - 更新日志: Release.md
       - License: License.md
