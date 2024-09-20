@@ -700,11 +700,11 @@
           <li class="md-nav__item">
   <a href="#springmvc" class="md-nav__link">
     <span class="md-ellipsis">
-      在 SpringMVC 中使用
+      在 SpringMvc 中使用
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="在 SpringMVC 中使用">
+    <nav class="md-nav" aria-label="在 SpringMvc 中使用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -739,6 +739,24 @@
   <a href="#smartvalidator" class="md-nav__link">
     <span class="md-ellipsis">
       SmartValidator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validator_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义 Validator 注解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
     </span>
   </a>
   
@@ -913,11 +931,11 @@
           <li class="md-nav__item">
   <a href="#springmvc" class="md-nav__link">
     <span class="md-ellipsis">
-      在 SpringMVC 中使用
+      在 SpringMvc 中使用
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="在 SpringMVC 中使用">
+    <nav class="md-nav" aria-label="在 SpringMvc 中使用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -957,6 +975,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#validator_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义 Validator 注解
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -976,7 +1012,8 @@
 
 
 <h1 id="validator">Validator</h1>
-<p>Spring 提供了一个可用于验证对象的 Validator 接口。Validator 接口使用 Errors 对象工作，以便在验证时，验证器可以向 Errors 对象报告验证失败。</p>
+<p>Spring 提供了一个可用于验证对象的 Validator 接口。Validator 接口使用 Errors 对象工作，以便在验证时，验证器可以向 Errors
+对象报告验证失败。</p>
 <h2 id="validator_1">Validator 接口实现</h2>
 <p>以下是一个数据对象</p>
 <div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
@@ -1013,7 +1050,8 @@
 <a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a><span class="p">}</span>
 </code></pre></div>
-<p>ValidationUtils 类的静态方法 rejectIfEmpty()方法用于当 name 属性为 null 或空字符串时拒绝该属性，更多功能可以查看 javadocs 获取。</p>
+<p>ValidationUtils 类的静态方法 rejectIfEmpty()方法用于当 name 属性为 null 或空字符串时拒绝该属性，更多功能可以查看 javadocs
+获取。</p>
 <h2 id="validator_2">Validator 嵌套</h2>
 <p>一个单独的 Validator 类可以验证对象中的每个嵌套对象，但最好在每个嵌套对象类自身的 Validator 实现中封装验证逻辑。</p>
 <p>Customer 对象由两个 String 类型的属性（firstname and lastname）以及一个复杂对象 Address 组成。</p>
@@ -1034,7 +1072,8 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="p">}</span>
 </code></pre></div>
-<p>Address 对象可以独立于 Customer 对象使用，因此实现了一个独立的 AddressValidator。如果希望 CustomerValidator 复用 AddressVaidator 类的逻辑，可以使用依赖注入或者实例化 CustomerValidator 中的 AddressValidator 并使用它。</p>
+<p>Address 对象可以独立于 Customer 对象使用，因此实现了一个独立的 AddressValidator。如果希望 CustomerValidator 复用
+AddressVaidator 类的逻辑，可以使用依赖注入或者实例化 CustomerValidator 中的 AddressValidator 并使用它。</p>
 <div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomerValidator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Validator</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Validator</span><span class="w"> </span><span class="n">addressValidator</span><span class="p">;</span>
@@ -1105,44 +1144,106 @@
 <a id="__codelineno-6-19" name="__codelineno-6-19"></a><a href="#__codelineno-6-19"><span class="linenos" data-linenos="19 "></span></a>
 <a id="__codelineno-6-20" name="__codelineno-6-20"></a><a href="#__codelineno-6-20"><span class="linenos" data-linenos="20 "></span></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="springmvc">在 SpringMVC 中使用</h3>
+<h3 id="springmvc">在 SpringMvc 中使用</h3>
 <p>Validator 对象可以在任何地方使用，但是应用中使用最多的地方应该还是对接口参数进行校验。</p>
-<p>@Validator 注解的作用是将参数标记为需要校验。请求参数在加上@Validator 注解之后，可以添加自定义的 validator 到 binder 进行校验，也可以通过在属性上加注解的方式对参数验证。</p>
+<p>在SpringMvc中，RequestResponseBodyMethodProcessor用于解析@RequestBody标注的参数以及处理@ResponseBody标注方法的返回值。</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RequestResponseBodyMethodProcessor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractMessageConverterMethodProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">resolveArgument</span><span class="p">(</span><span class="n">MethodParameter</span><span class="w"> </span><span class="n">parameter</span><span class="p">,</span><span class="w"> </span><span class="nd">@Nullable</span><span class="w"> </span><span class="n">ModelAndViewContainer</span><span class="w"> </span><span class="n">mavContainer</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">                                  </span><span class="n">NativeWebRequest</span><span class="w"> </span><span class="n">webRequest</span><span class="p">,</span><span class="w"> </span><span class="nd">@Nullable</span><span class="w"> </span><span class="n">WebDataBinderFactory</span><span class="w"> </span><span class="n">binderFactory</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">        </span><span class="n">parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parameter</span><span class="p">.</span><span class="na">nestedIfOptional</span><span class="p">();</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">        </span><span class="c1">//将请求数据封装到DTO对象中</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readWithMessageConverters</span><span class="p">(</span><span class="n">webRequest</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="p">.</span><span class="na">getNestedGenericParameterType</span><span class="p">());</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><a href="#__codelineno-7-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Conventions</span><span class="p">.</span><span class="na">getVariableNameForParameter</span><span class="p">(</span><span class="n">parameter</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><a href="#__codelineno-7-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><a href="#__codelineno-7-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">binderFactory</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><a href="#__codelineno-7-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">            </span><span class="n">WebDataBinder</span><span class="w"> </span><span class="n">binder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binderFactory</span><span class="p">.</span><span class="na">createBinder</span><span class="p">(</span><span class="n">webRequest</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><a href="#__codelineno-7-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><a href="#__codelineno-7-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">                </span><span class="c1">// 执行数据校验</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><a href="#__codelineno-7-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">                </span><span class="n">validateIfApplicable</span><span class="p">(</span><span class="n">binder</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><a href="#__codelineno-7-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">binder</span><span class="p">.</span><span class="na">getBindingResult</span><span class="p">().</span><span class="na">hasErrors</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isBindExceptionRequired</span><span class="p">(</span><span class="n">binder</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><a href="#__codelineno-7-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MethodArgumentNotValidException</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span><span class="w"> </span><span class="n">binder</span><span class="p">.</span><span class="na">getBindingResult</span><span class="p">());</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><a href="#__codelineno-7-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><a href="#__codelineno-7-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><a href="#__codelineno-7-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mavContainer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><a href="#__codelineno-7-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">                </span><span class="n">mavContainer</span><span class="p">.</span><span class="na">addAttribute</span><span class="p">(</span><span class="n">BindingResult</span><span class="p">.</span><span class="na">MODEL_KEY_PREFIX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">binder</span><span class="p">.</span><span class="na">getBindingResult</span><span class="p">());</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><a href="#__codelineno-7-22"><span class="linenos" data-linenos="22 "></span></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><a href="#__codelineno-7-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><a href="#__codelineno-7-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">adaptArgumentIfNecessary</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><a href="#__codelineno-7-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><a href="#__codelineno-7-26"><span class="linenos" data-linenos="26 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p>resolveArgument()调用了validateIfApplicable()进行参数校验。在validateIfApplicable()方法中，
+首先会判断参数是否含有@Validated注解以及Valid开头的注解，最后调用WebDataBinder的validate()方法进行校验。</p>
+<p><div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validateIfApplicable</span><span class="p">(</span><span class="n">WebDataBinder</span><span class="w"> </span><span class="n">binder</span><span class="p">,</span><span class="w"> </span><span class="n">MethodParameter</span><span class="w"> </span><span class="n">parameter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="c1">// 获取参数注解，比如@RequestBody、@Valid、@Validated</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="n">Annotation</span><span class="o">[]</span><span class="w"> </span><span class="n">annotations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parameter</span><span class="p">.</span><span class="na">getParameterAnnotations</span><span class="p">();</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Annotation</span><span class="w"> </span><span class="n">ann</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">annotations</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">        </span><span class="c1">// 先尝试获取@Validated注解</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">        </span><span class="n">Validated</span><span class="w"> </span><span class="n">validatedAnn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnnotationUtils</span><span class="p">.</span><span class="na">getAnnotation</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span><span class="w"> </span><span class="n">Validated</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">        </span><span class="c1">//如果直接标注了@Validated，那么直接开启校验。</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">        </span><span class="c1">//如果没有，那么判断参数前是否有Valid起头的注解。</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">validatedAnn</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ann</span><span class="p">.</span><span class="na">annotationType</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">().</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;Valid&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><a href="#__codelineno-8-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">            </span><span class="n">Object</span><span class="w"> </span><span class="n">hints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">validatedAnn</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">validatedAnn</span><span class="p">.</span><span class="na">value</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AnnotationUtils</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">ann</span><span class="p">));</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><a href="#__codelineno-8-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">            </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">validationHints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">hints</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="n">hints</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">hints</span><span class="p">});</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><a href="#__codelineno-8-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">            </span><span class="c1">//执行校验</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><a href="#__codelineno-8-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">            </span><span class="n">binder</span><span class="p">.</span><span class="na">validate</span><span class="p">(</span><span class="n">validationHints</span><span class="p">);</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><a href="#__codelineno-8-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><a href="#__codelineno-8-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><a href="#__codelineno-8-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><a href="#__codelineno-8-17"><span class="linenos" data-linenos="17 "></span></a><span class="p">}</span>
+</code></pre></div>
+WebDataBinder的validate()会获取WebDataBinder中的所有Validator对象，执行Validator对象的validate()方法。
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="n">Object</span><span class="p">...</span><span class="w"> </span><span class="n">validationHints</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Validator</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">getValidators</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ObjectUtils</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">(</span><span class="n">validationHints</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">SmartValidator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">                </span><span class="p">((</span><span class="n">SmartValidator</span><span class="p">)</span><span class="w"> </span><span class="n">validator</span><span class="p">).</span><span class="na">validate</span><span class="p">(</span><span class="n">getTarget</span><span class="p">(),</span><span class="w"> </span><span class="n">getBindingResult</span><span class="p">(),</span><span class="w"> </span><span class="n">validationHints</span><span class="p">);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">validator</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">                </span><span class="n">validator</span><span class="p">.</span><span class="na">validate</span><span class="p">(</span><span class="n">getTarget</span><span class="p">(),</span><span class="w"> </span><span class="n">getBindingResult</span><span class="p">());</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><a href="#__codelineno-9-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+<p>@Validator 注解的作用是将参数标记为需要校验。参数在加上@Validator 注解、自定义的 Valid 开头的注解或者@Valid 注解之后，可以添加自定义的
+validator 到 binder 进行校验，也可以通过在被校验对象属性上加注解的方式对参数验证。</p>
 <p>有一个添加了@Validator 注解的 savePerson 接口，如下：</p>
-<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/baseCost&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">savePerson</span><span class="p">(</span><span class="nd">@RequestBody</span><span class="w"> </span><span class="nd">@Validator</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="p">){</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">        </span><span class="c1">// do something</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="p">}</span>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/baseCost&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">savePerson</span><span class="p">(</span><span class="nd">@RequestBody</span><span class="w"> </span><span class="nd">@Validator</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="p">){</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">        </span><span class="c1">// do something</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <h4 id="validator_4">使用自定义 Validator</h4>
-<p>添加 Validator 到 WebDataBinder：</p>
-<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">PersonValidator</span><span class="w"> </span><span class="n">personValidator</span><span class="p">;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="cm">/**</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a><span class="cm">     * person参数校验器</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a><span class="cm">     * @param binder</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a><span class="cm">     */</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="nd">@InitBinder</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;person&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initBinder</span><span class="p">(</span><span class="n">WebDataBinder</span><span class="w"> </span><span class="n">binder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">        </span><span class="n">binder</span><span class="p">.</span><span class="na">addValidators</span><span class="p">(</span><span class="n">personValidator</span><span class="p">);</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos="9 "></span></a><span class="w">    </span><span class="p">}</span>
+<p>添加自定义的 PersonValidator 到 WebDataBinder：</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">PersonValidator</span><span class="w"> </span><span class="n">personValidator</span><span class="p">;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="cm">/**</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><a href="#__codelineno-11-3"><span class="linenos" data-linenos="3 "></span></a><span class="cm">     * person参数校验器</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><a href="#__codelineno-11-4"><span class="linenos" data-linenos="4 "></span></a><span class="cm">     * @param binder</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><a href="#__codelineno-11-5"><span class="linenos" data-linenos="5 "></span></a><span class="cm">     */</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><a href="#__codelineno-11-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="nd">@InitBinder</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;person&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><a href="#__codelineno-11-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initBinder</span><span class="p">(</span><span class="n">WebDataBinder</span><span class="w"> </span><span class="n">binder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><a href="#__codelineno-11-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">        </span><span class="n">binder</span><span class="p">.</span><span class="na">addValidators</span><span class="p">(</span><span class="n">personValidator</span><span class="p">);</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><a href="#__codelineno-11-9"><span class="linenos" data-linenos="9 "></span></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>需要注意的是 initBinder 在当前控制器生效，如果没有指定 value 则会对控制器下的参数都进行校验。如果控制器下有多个方法，且请求参数不一致时，必须明确指定 initBinder 的 value，否则在请求 Validator 不支持的参数所在接口时，会报错。</li>
+<li>需要注意的是 initBinder 在当前控制器生效，如果没有指定 value 则会对控制器下的参数都进行校验。如果控制器下有多个方法，且请求参数不一致时，必须明确指定
+  initBinder 的 value，否则在请求 Validator 不支持的参数所在接口时，会报错。</li>
 </ul>
 <h4 id="spring">Spring 支持的注解</h4>
-<p>注解使用示例：
-Spring Validator 支持 javax.validation.constraints以及org.hibernate.validator.constraints包下的注解。
-<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="nd">@NotEmpty</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;name can&#39;t null&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="nd">@Min</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age min 0&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="nd">@Max</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;150&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age max 150&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos="7 "></span></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">    </span><span class="c1">// the usual getters and setters...</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos="9 "></span></a><span class="p">}</span>
-</code></pre></div></p>
+<p>Spring Validator 支持 javax.validation.constraints 以及 org.hibernate.validator.constraints 包下的注解。</p>
+<p>注解使用示例：</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="nd">@NotEmpty</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;name can&#39;t null&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="nd">@Min</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age min 0&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="nd">@Max</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;150&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age max 150&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><a href="#__codelineno-12-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><a href="#__codelineno-12-7"><span class="linenos" data-linenos="7 "></span></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><a href="#__codelineno-12-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">    </span><span class="c1">// the usual getters and setters...</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><a href="#__codelineno-12-9"><span class="linenos" data-linenos="9 "></span></a><span class="p">}</span>
+</code></pre></div>
 <p>Spring Validator 支持 javax.validation.constraints 包下的注解：</p>
 <ul>
 <li>NotNull</li>
@@ -1164,7 +1265,89 @@ Spring Validator 支持 javax.validation.constraints以及org.hibernate.validato
 </ul>
 <p>详情可以查询 javadoc 文档。</p>
 <h2 id="smartvalidator">SmartValidator</h2>
-<p>未完待续</p>
+<p>有时需要动态、有条件的校验参数。SmartValidator 继承了 Validator 接口，增加了对验证提示的支持，相比 Validator
+接口提供了更精细化的校验。Spring 默认提供了对 SmartValidator 的支持，我们也可以自行实现 SmartValidator 的逻辑。</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">void</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="nd">@Nullable</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">              </span><span class="n">java</span><span class="p">.</span><span class="na">lang</span><span class="p">.</span><span class="na">Object</span><span class="w"> </span><span class="n">target</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">              </span><span class="n">Errors</span><span class="w"> </span><span class="n">errors</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><a href="#__codelineno-13-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">              </span><span class="n">java</span><span class="p">.</span><span class="na">lang</span><span class="p">.</span><span class="na">Object</span><span class="p">...</span><span class="w"> </span><span class="n">validationHints</span><span class="p">)</span>
+</code></pre></div>
+<p>Parameters:
+target - 待验证对象 (可以为空)
+errors - 验证过程上下文 (不允许为空)
+validationHints - 传递给验证引擎的一个或者多个提示对象</p>
+<p>@Validated 注解接收接口类型的 Class 对象。</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a><span class="nd">@Validated</span><span class="p">({</span><span class="n">AddPerson</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">Default</span><span class="p">.</span><span class="na">class</span><span class="p">})</span>
+</code></pre></div>
+<p>分组接口</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Addperson</span><span class="p">{}</span>
+</code></pre></div>
+<p>需要注意的是，传入自定义的分组对象会覆盖掉默认值（Default.class），如果想保留默认的校验需要同时传入自定义的分组对象和
+Default.class 对象。</p>
+<p>实现 SmartValidator 接口，SmartValidator 对象绑定到 WebDataBinder 之后，validationHints 参数就是@Validator
+注解中传入的数组。有了这个参数就可以实现自定义的分组逻辑。</p>
+<p>分组标记示例：</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><a href="#__codelineno-16-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="nd">@NotEmpty</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;name can&#39;t null&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">groups</span><span class="o">=</span><span class="n">AddPerson</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><a href="#__codelineno-16-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><a href="#__codelineno-16-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="nd">@Min</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age min 0&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><a href="#__codelineno-16-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="nd">@Max</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;150&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;age max 150&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><a href="#__codelineno-16-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><a href="#__codelineno-16-7"><span class="linenos" data-linenos="7 "></span></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><a href="#__codelineno-16-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">    </span><span class="c1">// the usual getters and setters...</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><a href="#__codelineno-16-9"><span class="linenos" data-linenos="9 "></span></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>name @NotEmpty 注解对 AddPerson 组生效</li>
+<li>age @Min 和@Max 注解对 Default 组生效</li>
+</ul>
+<p>对于 Person 实例，生效条件取决于@Validator 指定的组。如果没有指定，则默认组生效，其他组不生效。</p>
+<h2 id="validator_5">自定义 Validator 注解</h2>
+<p>Spring Validator 已经提供了非常通用的一些注解，但是对于一些特定的场景，需要自行实现。</p>
+<p>以下是一个验证性别的例子。</p>
+<p>定义 @Sex 注解</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">METHOD</span><span class="p">,</span><span class="w"> </span><span class="n">ElementType</span><span class="p">.</span><span class="na">FIELD</span><span class="p">})</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><a href="#__codelineno-17-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><a href="#__codelineno-17-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="nd">@Constraint</span><span class="p">(</span><span class="n">validatedBy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SexValidator</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><a href="#__codelineno-17-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kd">public</span><span class="w"> </span><span class="nd">@interface</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><a href="#__codelineno-17-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">message</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s">&quot;{Sex error}&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><a href="#__codelineno-17-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><a href="#__codelineno-17-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="n">Class</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">groups</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><a href="#__codelineno-17-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><a href="#__codelineno-17-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="n">Class</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Payload</span><span class="o">&gt;[]</span><span class="w"> </span><span class="nf">payload</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><a href="#__codelineno-17-10"><span class="linenos" data-linenos="10 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p>@Constraint 注解指定验证类，验证类必需实现 ConstraintValidator 接口。ConstraintValidator 接口有两个方法，<code>initialize</code>
+用于初始化验证器。<code>isValid</code>用于实际校验。</p>
+<p>SexValidator实现ConstraintValidator接口。</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><a href="#__codelineno-18-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SexValidator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ConstraintValidator</span><span class="o">&lt;</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><a href="#__codelineno-18-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><a href="#__codelineno-18-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">(</span><span class="n">Sex</span><span class="w"> </span><span class="n">constraintAnnotation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><a href="#__codelineno-18-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><a href="#__codelineno-18-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><a href="#__codelineno-18-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><a href="#__codelineno-18-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValid</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">ConstraintValidatorContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><a href="#__codelineno-18-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;男&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s">&quot;女&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><a href="#__codelineno-18-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><a href="#__codelineno-18-10"><span class="linenos" data-linenos="10 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p>Person sex字段添加@Sex注解。</p>
+<div class="language-java highlight"><span class="filename">Java</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><a href="#__codelineno-19-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><a href="#__codelineno-19-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><a href="#__codelineno-19-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="nd">@Sex</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><a href="#__codelineno-19-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sex</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><a href="#__codelineno-19-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><a href="#__codelineno-19-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">    </span><span class="c1">// the usual getters and setters...</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><a href="#__codelineno-19-8"><span class="linenos" data-linenos="8 "></span></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_2">总结</h2>
+<ul>
+<li>Spring
+  Validator可以通过实现接口（Validator或者SmartValidator）的方式实现验证，也可以通过注解（自定义注解需要实现ConstraintValidator接口，并且添加@Constraint注解）的方式验证。</li>
+<li>注解方式可以满足单个字段的验证，如果需要同时验证多个字段，则可以使用实现接口的方式。如果涉及到分组，则需要实现SmartValidator。</li>
+<li>SpringMVC框架中可以使用@Valid、@Validated或者任意Valid开头的注解触发Spring Validator验证。</li>
+</ul>
 
 
 
