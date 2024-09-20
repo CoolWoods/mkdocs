@@ -38,7 +38,19 @@ public void service(ServletRequest request,
 `service()`方法由容器调用，所以开发人员无需对`service()`方法做任何动作，只需要根据来自客户端的请求类型来重写 doGet()或者 doPost()方法即可。
 
 #### doGet()
-GET请求来自于一个URL的正常请求，或者来自于一个未指定METHOD的HTML表单，它由doGet()方法处理。
+
+GET 请求来自于一个 URL 的正常请求，或者来自于一个未指定 METHOD 的 HTML 表单，它由 doGet()方法处理。
+
+```java
+public void doGet(HttpServletRequest request,
+                   HttpServletResponse response)
+    throws ServletException, IOException {
+    // Servlet 代码
+}
+```
+
+#### doPost()
+
 ```java
 public void doPost(HttpServletRequest request,
                    HttpServletResponse response)
